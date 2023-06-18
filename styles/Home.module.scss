@@ -8,7 +8,7 @@
     &__profile {
         box-sizing: border-box;
         @include variables.flex-box-column;
-        background-color: rgb(214, 208, 208);
+        background-color: variables.$bg-color-section;
         flex-direction: row;
         justify-content: space-between;
         border-radius: variables.$border-radius;
@@ -16,6 +16,11 @@
         padding: variables.$padding;
     }
     &__dashboard {
+        @include variables.flex-box-column;
+        flex-direction: row;
+        padding: variables.$padding;
+    }
+    &__deeds {
         @include variables.flex-box-column;
     }
 }

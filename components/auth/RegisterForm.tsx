@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './Form.module.scss';
+import styles from '@/styles/Form.module.scss';
 import { RegisterFormDto } from '@/api/dto/auth.dto';
 import * as Api from '@/api';
 import { setCookie } from 'nookies';

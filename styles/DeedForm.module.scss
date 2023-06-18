@@ -1,0 +1,18 @@
+@use 'variables';
+
+.editDeed {
+    @include variables.flex-box-column;
+    background-color: variables.$bg-color;
+    border-radius: variables.$border-radius;
+    padding: variables.$padding;
+    gap: variables.$flex-gap;
+    width: variables.$card-width;
+    &__title {
+        font-size: variables.$title-fontSize;
+        font-weight: variables.$title-fontWeight;
+    }
+    &__field{}
+    &__input{
+        width: 100%;
+    }
+}

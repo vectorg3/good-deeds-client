@@ -15,7 +15,7 @@
     border-radius: 50%;
     @include variables.box-shadow;
     cursor: pointer;
-    transition: all 0.2s ease-in;
+    transition: variables.$transition;
     &:hover {
         transform: translateX(-3px);
     }

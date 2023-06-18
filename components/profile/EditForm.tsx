@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import * as Api from '@/api';
 import { Toast } from '../toasts/toast';
-import styles from '../auth/Form.module.scss';
+import styles from '@/styles/Form.module.scss';
 import { AiOutlineUser } from 'react-icons/ai';
 import { HiOutlineMail, HiOutlineKey } from 'react-icons/hi';
 
@@ -14,9 +14,17 @@ const EditForm: React.FC = () => {
     const [password, setPassword] = useState<string>('');
     useEffect(() => {
         const loadData = async () => {
-            const data = await Api.auth.getMe();
-            setUserName(data.userName);
-            setEmail(data.email);
+            try {
+                const data = await Api.auth.getMe();
+                setUserName(data.userName);
+                setEmail(data.email);
+            } catch (err: any) {
+                Toast.fire({
+                    icon: 'error',
+                    title: err.message,
+                });
+                router.push('/auth');
+            }
         };
         loadData();
     }, []);

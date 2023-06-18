@@ -24,7 +24,7 @@
             display: block;
             font-size: 16px;
             border: none;
-            transition: all 0.3s ease-in;
+            transition: variables.$transition;
             &:hover {
                 transform: translateY(-3px);
             }

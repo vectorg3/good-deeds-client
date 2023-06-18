@@ -9,7 +9,7 @@ const edit: NextPage = () => {
         <>
             <>
                 <Head>
-                    <title>Редактирование профиля</title>
+                    <title>Deeds / Редактирование</title>
                 </Head>
                 <main>
                     <div className={styles.edit}>

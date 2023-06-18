@@ -1,9 +1,10 @@
-@use '../../styles/variables.scss';
+@use 'variables';
 .form {
     @include variables.flex-box-column;
     gap: variables.$flex-gap;
     &__field {
         position: relative;
+        width: 400px;
     }
     &__input {
         font-family: inherit;
@@ -13,6 +14,8 @@
         padding: variables.$padding;
         border-radius: variables.$border-radius;
         padding-left: 2.5rem;
+        width: 100%;
+        box-sizing: border-box;
         @include variables.box-shadow;
     }
     label {

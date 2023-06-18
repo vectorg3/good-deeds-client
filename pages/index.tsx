@@ -4,12 +4,13 @@ import Head from 'next/head';
 import { checkAuth } from '@/utils/checkAuth';
 import styles from '@/styles/Home.module.scss';
 import Profile from '@/components/profile/Profile';
+import Deeds from '@/components/deeds/Deeds';
 
 const DashboardPage: NextPage = () => {
     return (
         <>
             <Head>
-                <title>Главная</title>
+                <title>Deeds / Главная</title>
             </Head>
             <main>
                 <div className={styles.home}>
@@ -18,7 +19,9 @@ const DashboardPage: NextPage = () => {
                     </header>
                     <div className={styles.home__dashboard}>
                         <div className={styles.home__friends}></div>
-                        <div className={styles.home__deeds}></div>
+                        <div className={styles.home__deeds}>
+                            <Deeds></Deeds>
+                        </div>
                     </div>
                 </div>
             </main>
