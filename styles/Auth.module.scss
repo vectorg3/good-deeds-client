@@ -1,0 +1,44 @@
+@use 'variables';
+
+.auth {
+    @include variables.flex-box-column;
+    justify-content: center;
+    height: 100vh;
+
+    &__container {
+        @include variables.flex-box-column;
+        background-color: variables.$bg-color;
+        padding: variables.$padding;
+        gap: variables.$flex-gap;
+        border-radius: variables.$border-radius;
+        width: variables.$card-width;
+    }
+    &__header {
+        @include variables.flex-box-column;
+        gap: variables.$flex-gap;
+    }
+    &__title {
+        font-size: variables.$title-fontSize;
+        font-weight: 700;
+    }
+    &__switch {
+        @include variables.flex-box-column;
+        flex-direction: row;
+        &_item {
+            font-family: inherit;
+            display: block;
+            font-size: 16px;
+            border: none;
+            transition: all 0.3s ease-in;
+            &:hover {
+                transform: translateY(-3px);
+            }
+        }
+    }
+    &__body {
+        @include variables.flex-box-column;
+    }
+}
+.auth__switch_item_active {
+    border-bottom: 0.5px solid gray;
+}

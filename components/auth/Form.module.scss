@@ -1,0 +1,28 @@
+@use '../../styles/variables.scss';
+.form {
+    @include variables.flex-box-column;
+    gap: variables.$flex-gap;
+    &__field {
+        position: relative;
+    }
+    &__input {
+        font-family: inherit;
+        font-size: 18px;
+        outline: none;
+        border: none;
+        padding: variables.$padding;
+        border-radius: variables.$border-radius;
+        padding-left: 2.5rem;
+        @include variables.input-box-shadow;
+    }
+    label {
+        position: absolute;
+        left: 1rem;
+        top: 35%;
+        height: 100%;
+    }
+    &__button {
+        @include variables.buttonStyles;
+        width: 100%;
+    }
+}
