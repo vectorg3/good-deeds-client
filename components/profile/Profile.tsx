@@ -35,7 +35,7 @@ const Profile: React.FC = () => {
                 <button type='button' className={styles.button}>
                     <BiEdit
                         className={styles.icons}
-                        onClick={() => router.push('/profile/editF')}
+                        onClick={() => router.push('/profile/edit')}
                     />
                 </button>
                 <button type='button' className={styles.button}>
