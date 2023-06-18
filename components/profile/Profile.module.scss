@@ -1,0 +1,25 @@
+@use '../../styles/variables.scss';
+.userData {
+    @include variables.flex-box-column;
+    align-items: baseline;
+}
+.buttons {
+    @include variables.flex-box-column;
+    flex-direction: row;
+    gap: variables.$flex-gap;
+}
+.button {
+    border: none;
+    padding: 0.5rem 0.6rem;
+    background: #f5f5f5;
+    border-radius: 50%;
+    @include variables.box-shadow;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+    &:hover {
+        transform: translateX(-3px);
+    }
+}
+.icons {
+    font-size: 32px;
+}

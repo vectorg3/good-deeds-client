@@ -13,7 +13,7 @@
         padding: variables.$padding;
         border-radius: variables.$border-radius;
         padding-left: 2.5rem;
-        @include variables.input-box-shadow;
+        @include variables.box-shadow;
     }
     label {
         position: absolute;

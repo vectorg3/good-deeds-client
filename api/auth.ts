@@ -7,7 +7,6 @@ import {
     RegisterResponseDto,
     USER,
 } from '@/api/dto/auth.dto';
-import { store } from '@/redux/store';
 
 export const login = async (
     values: LoginFormDto

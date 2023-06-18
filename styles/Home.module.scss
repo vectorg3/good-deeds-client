@@ -1,0 +1,21 @@
+@use 'variables';
+.home {
+    @include variables.flex-box-column;
+    background-color: variables.$bg-color;
+    border-radius: variables.$border-radius;
+    width: variables.$card-width;
+    padding: variables.$padding;
+    &__profile {
+        box-sizing: border-box;
+        @include variables.flex-box-column;
+        background-color: rgb(214, 208, 208);
+        flex-direction: row;
+        justify-content: space-between;
+        border-radius: variables.$border-radius;
+        width: 100%;
+        padding: variables.$padding;
+    }
+    &__dashboard {
+        @include variables.flex-box-column;
+    }
+}

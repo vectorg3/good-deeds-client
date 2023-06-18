@@ -1,0 +1,7 @@
+@use '../../styles/variables.scss';
+
+.layout{
+    @include variables.flex-box-column;
+    justify-content: center;
+    height: 100vh;
+}

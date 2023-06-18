@@ -2,17 +2,12 @@
 
 .auth {
     @include variables.flex-box-column;
-    justify-content: center;
-    height: 100vh;
+    background-color: variables.$bg-color;
+    border-radius: variables.$border-radius;
+    padding: variables.$padding;
+    gap: variables.$flex-gap;
+    width: variables.$card-width;
 
-    &__container {
-        @include variables.flex-box-column;
-        background-color: variables.$bg-color;
-        padding: variables.$padding;
-        gap: variables.$flex-gap;
-        border-radius: variables.$border-radius;
-        width: variables.$card-width;
-    }
     &__header {
         @include variables.flex-box-column;
         gap: variables.$flex-gap;
