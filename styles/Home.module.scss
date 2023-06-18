@@ -5,6 +5,8 @@
     border-radius: variables.$border-radius;
     width: variables.$card-width;
     padding: variables.$padding;
+    box-sizing: border-box;
+
     &__profile {
         box-sizing: border-box;
         @include variables.flex-box-column;
@@ -17,10 +19,21 @@
     }
     &__dashboard {
         @include variables.flex-box-column;
+        align-items: start;
+        justify-content: space-between;
         flex-direction: row;
         padding: variables.$padding;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    &__friends {
+        @include variables.flex-box-column;
+        align-items: start;
+        width: 30%;
     }
     &__deeds {
         @include variables.flex-box-column;
+        align-items: start;
+        width: 60%;
     }
 }

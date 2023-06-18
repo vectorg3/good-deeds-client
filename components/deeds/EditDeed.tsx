@@ -24,7 +24,7 @@ const EditDeed: React.FC = () => {
                     icon: 'error',
                     title: err.message,
                 });
-                router.push('/auth');
+                router.push('/');
             }
         };
         loadData();

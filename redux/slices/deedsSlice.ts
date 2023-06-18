@@ -7,6 +7,7 @@ import { DeedDto } from '@/api/dto/deed.dto';
 type InitialState = {
     value: {
         deeds: DeedDto[];
+        friendDeeds: DeedDto[];
         loading: boolean;
         error: string | undefined;
     };
@@ -15,6 +16,7 @@ type InitialState = {
 const initialState: InitialState = {
     value: {
         deeds: [],
+        friendDeeds: [],
         loading: false,
         error: undefined,
     },
@@ -25,10 +27,10 @@ export const fetchGetDeeds = createAsyncThunk(
         return await Api.deeds.getDeeds();
     }
 );
-export const fetchDeletetDeed = createAsyncThunk(
-    'auth/fetchDeletetDeed',
+export const fetchGetFriendDeeds = createAsyncThunk(
+    'auth/fetchGetFriendDeeds',
     async (id: string) => {
-        return await Api.deeds.deleteDeed(id);
+        return await Api.deeds.getFriendsDeeds(id);
     }
 );
 export const deedsSlice = createSlice({
@@ -48,6 +50,17 @@ export const deedsSlice = createSlice({
                 state.value.loading = false;
                 state.value.error = action.error.message;
             })
+            .addCase(fetchGetFriendDeeds.pending, (state) => {
+                state.value.loading = true;
+            })
+            .addCase(fetchGetFriendDeeds.fulfilled, (state, action) => {
+                state.value.friendDeeds = action.payload;
+                state.value.loading = false;
+            })
+            .addCase(fetchGetFriendDeeds.rejected, (state, action) => {
+                state.value.loading = false;
+                state.value.error = action.error.message;
+            });
     },
 });
 

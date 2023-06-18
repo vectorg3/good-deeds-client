@@ -1,23 +1,22 @@
-import CreateDeed from '@/components/deeds/CreateDeed';
+import AddFriend from '@/components/friends/AddFriend';
+import { checkAuth } from '@/utils/checkAuth';
 import { GetServerSidePropsContext, NextPage } from 'next';
+import styles from '@/styles/Section.module.scss';
 import Head from 'next/head';
 import React from 'react';
-import styles from '@/styles/DeedForm.module.scss';
-import { checkAuth } from '@/utils/checkAuth';
 import BackBtn from '@/components/BackBtn/BackBtn';
-const NewDeedPage: NextPage = () => {
+
+const AddFriendPage: NextPage = () => {
     return (
         <>
             <Head>
-                <title>Deeds / Новая запись</title>
+                <title>Deeds / Добавить друга</title>
             </Head>
             <main>
             <BackBtn />
-                <div className={styles.editDeed}>
-                    <h1 className={styles.editDeed__title}>
-                        Создание записи
-                    </h1>
-                    <CreateDeed></CreateDeed>
+                <div className={styles.card}>
+                    <h1 className={styles.section__title}>Добавить друга</h1>
+                    <AddFriend />
                 </div>
             </main>
         </>
@@ -32,4 +31,5 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
         props: {},
     };
 };
-export default NewDeedPage;
+
+export default AddFriendPage;

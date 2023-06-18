@@ -1,0 +1,13 @@
+@use '../../styles/variables.scss';
+
+.backbtn{
+    background: gray;
+    border-radius: variables.$border-radius;
+    padding: variables.$padding;
+    color: white;
+    text-decoration: none;
+    transition: variables.$transition;
+    &:hover{
+        background-color: rgb(103, 103, 103);;
+    }
+}

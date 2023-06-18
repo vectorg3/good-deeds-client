@@ -5,8 +5,9 @@ import { checkAuth } from '@/utils/checkAuth';
 import styles from '@/styles/Home.module.scss';
 import Profile from '@/components/profile/Profile';
 import Deeds from '@/components/deeds/Deeds';
+import Friends from '@/components/friends/Friends';
 
-const DashboardPage: NextPage = () => {
+const HomePage: NextPage = () => {
     return (
         <>
             <Head>
@@ -14,12 +15,17 @@ const DashboardPage: NextPage = () => {
             </Head>
             <main>
                 <div className={styles.home}>
+                    <h2>Профиль</h2>
                     <header className={styles.home__profile}>
                         <Profile />
                     </header>
                     <div className={styles.home__dashboard}>
-                        <div className={styles.home__friends}></div>
+                        <div className={styles.home__friends}>
+                            <h2>Друзья</h2>
+                            <Friends></Friends>
+                        </div>
                         <div className={styles.home__deeds}>
+                            <h2>Добрые дела</h2>
                             <Deeds></Deeds>
                         </div>
                     </div>
@@ -37,4 +43,4 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
         props: {},
     };
 };
-export default DashboardPage;
+export default HomePage;

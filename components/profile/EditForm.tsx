@@ -30,10 +30,10 @@ const EditForm: React.FC = () => {
     }, []);
     const handleEdit = async (user: EditUserDto) => {
         try {
-            await Api.users.edit(user);
+            const res = await Api.users.edit(user);
             Toast.fire({
                 icon: 'success',
-                title: 'Профиль успешно отредактирован',
+                title: `${res.message}`,
             });
             router.push('/');
         } catch (err: any) {

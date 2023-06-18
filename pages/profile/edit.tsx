@@ -1,8 +1,9 @@
 import { checkAuth } from '@/utils/checkAuth';
 import { GetServerSidePropsContext, NextPage } from 'next';
-import styles from '@/styles/ProfileEdit.module.scss';
+import styles from '@/styles/Section.module.scss';
 import Head from 'next/head';
 import EditForm from '@/components/profile/EditForm';
+import BackBtn from '@/components/BackBtn/BackBtn';
 
 const edit: NextPage = () => {
     return (
@@ -12,8 +13,9 @@ const edit: NextPage = () => {
                     <title>Deeds / Редактирование</title>
                 </Head>
                 <main>
-                    <div className={styles.edit}>
-                        <h1 className={styles.edit__title}>
+                    <BackBtn />
+                    <div className={styles.card}>
+                        <h1 className={styles.section__title}>
                             Редактирование профиля
                         </h1>
                         <EditForm />

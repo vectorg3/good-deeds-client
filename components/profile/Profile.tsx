@@ -7,13 +7,21 @@ import { FiLogOut } from 'react-icons/fi';
 import { BiEdit } from 'react-icons/bi';
 import * as Api from '@/api';
 import { useRouter } from 'next/router';
+import { Toast } from '../toasts/toast';
 
 const Profile: React.FC = () => {
     const router = useRouter();
     const dispatch = useDispatch<AppDispatch>();
     const userData = useAppSelector((store) => store.userReducer.value.user);
     useEffect(() => {
-        dispatch(fetchGetMe());
+        try {
+            dispatch(fetchGetMe());
+        } catch (err: any) {
+            Toast.fire({
+                icon: 'error',
+                text: err.message,
+            });
+        }
     }, [dispatch]);
     return (
         <>

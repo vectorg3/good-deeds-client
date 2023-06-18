@@ -24,3 +24,7 @@ export const deleteDeed = async (
 ): Promise<{ message: string }> => {
     return (await axios.delete(`/deeds/${id}`)).data;
 };
+
+export const getFriendsDeeds = async(id: string): Promise<DeedDto[]> => {
+    return (await axios.get(`/deeds/friend/${id}`)).data
+}
